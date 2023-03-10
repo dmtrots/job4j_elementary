@@ -1,7 +1,7 @@
 package ru.job4j.calculate;
 
 public class Variables {
-    @SuppressWarnings("checkstyle:ParenPad")
+
     public static void main(String[] args) {
         int age = 18;
         System.out.println(age);
