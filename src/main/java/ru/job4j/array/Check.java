@@ -6,12 +6,13 @@ public class Check {
         for (int index = 0; index < data.length; index++) {
             if (data[0] != data[index]) {
                 result = false;
+                break;
             }
         }
         return result;
     }
 
     public static void main(String[]args) {
-        System.out.println(mono(new boolean[] {true, true, true}));
+        System.out.println(mono(new boolean[] {true, true, false}));
         }
     }
