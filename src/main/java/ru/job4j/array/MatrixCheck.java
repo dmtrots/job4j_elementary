@@ -12,11 +12,27 @@ public class MatrixCheck {
         return result;
     }
 
+    public static boolean monoVertical(char[][] board, int column) {
+        boolean result = true;
+        for (int index = 0; index < board.length; index++) {
+            if (board[index][column] != 'X') {
+                result = false;
+                break;
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
-        System.out.println(monoHorizontal(new char[][] {
+        System.out.println("По горизонтали: " + monoHorizontal(new char[][] {
                 {' ', ' ', ' '},
                 {'X', 'X', 'X'},
                 {'X', 'X', ' ', 'X'}},
+                0));
+        System.out.println("По вертикали: " + monoVertical(new char[][] {
+                        {'X', ' ', ' '},
+                        {'X', 'X', 'X'},
+                        {'X', 'X', ' ', 'X'}},
                 0));
         }
 }
