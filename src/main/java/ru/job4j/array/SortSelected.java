@@ -4,9 +4,9 @@ public class SortSelected {
 
     public static int[] sort(int[] data) {
         for (int i = 0; i < data.length - 1; i++) {
-            int min = MinDiapason.findMin(data, i, data.length - 1); /* нашли значение минимального элемента */
-            int index = FindLoop.indexInRange(data, min, i, data.length - 1); /* нашли индекс минимального элемента */
-            data = SwitchArray.swap(data, i, index);
+            int min = MinDiapason.findMin(data, i, data.length - 1);
+            int index = FindLoop.indexInRange(data, min, i, data.length - 1);
+            SwitchArray.swap(data, i, index);
         }
         return data;
     }
