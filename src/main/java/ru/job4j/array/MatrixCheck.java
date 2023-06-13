@@ -31,6 +31,19 @@ public class MatrixCheck {
         return rsl;
     }
 
+    public static boolean isWin(char[][] board) {
+        boolean result = false;
+        for (int index = 0; index < board.length; index++) {
+            if (board[index][index] == 'X') {
+                if (board.length == 5 && (monoHorizontal(board, index) || monoVertical(board, index))) {
+                    result = true;
+                    break;
+                }
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         System.out.println("По горизонтали: " + monoHorizontal(new char[][]{
                         {' ', ' ', ' '},
@@ -50,5 +63,12 @@ public class MatrixCheck {
         })) {
             System.out.println(symbol);
         }
+        System.out.println("Выигрышна ли комбинация: " + isWin(new char[][]{
+                {' ', ' ', ' ', ' ', ' '},
+                {'X', ' ', ' ', ' ', ' '},
+                {'X', ' ', ' ', ' ', ' '},
+                {'X', ' ', ' ', ' ', ' '},
+                {'X', 'X', 'X', 'X', ' '},
+        }));
     }
 }
