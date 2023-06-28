@@ -5,20 +5,26 @@ public class SimpleStringEncoder {
         String result = "";
         char symbol = input.charAt(0);
         int counter = 1;
-        for (int i = 0; i < input.length(); i++) {
-            if (symbol == input.charAt(i) && i != input.length() - 1) {
+        for (int i = 1; i < input.length(); i++) {
+            if (input.charAt(i) == symbol) {
                 counter++;
             } else {
-                result += "" + counter + symbol;
-                counter = 1;
-                symbol = input.charAt(i);
+                if (counter == 1) {
+                    result += "" + symbol;
+                    symbol = input.charAt(i);
+                } else {
+                    result += "" + symbol + counter;
+                    counter = 1;
+                    symbol = input.charAt(i);
+                }
             }
         }
+        result += "" + symbol + counter;
         return result;
     }
 
     public static void main(String[] args) {
-        String result = encode("aaabbbccddddd");
+        String result = encode("abbbccd");
         System.out.println(result);
     }
 }
