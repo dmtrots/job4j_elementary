@@ -19,12 +19,16 @@ public class SimpleStringEncoder {
                 }
             }
         }
-        result += "" + symbol + counter;
+        if (counter == 1) {
+            result += "" + symbol;
+        } else {
+            result += "" + symbol + counter;
+        }
         return result;
     }
 
     public static void main(String[] args) {
-        String result = encode("abbbccd");
+        String result = encode("abbbccddd");
         System.out.println(result);
     }
 }
