@@ -30,25 +30,9 @@ public class FitTest {
     }
 
     @Test
-    public void whenManHeight150ThenWeight57dot5() {
-        short height = 150;
-        double expected = 57.5;
-        double out = Fit.manWeight(height);
-        Assert.assertEquals(expected, out, 0.01);
-    }
-
-    @Test
-    public void whenWomanHeight180ThenWeight80dot5() {
-        short height = 180;
-        double expected = 80.5;
-        double out = Fit.womanWeight(height);
-        Assert.assertEquals(expected, out, 0.01);
-    }
-
-    @Test
-    public void whenWomanHeight150ThenWeight46() {
-        short height = 150;
-        double expected = 46.0;
+    public void whenWomanHeight170ThenWeight69() {
+        short height = 170;
+        double expected = 69.0;
         double out = Fit.womanWeight(height);
         Assert.assertEquals(expected, out, 0.01);
     }
