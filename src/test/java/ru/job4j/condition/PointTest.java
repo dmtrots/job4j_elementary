@@ -55,4 +55,13 @@ public class PointTest {
         int expected = 26;
         assertThat(a.distance(b)).isEqualTo(expected);
     }
+
+    @Test
+    public void when111to791then10() {
+        Point c = new Point(1, 1, 1);
+        Point d = new Point(7, 9, 1);
+        c.distance3d(d);
+        int expected = 10;
+        assertThat(c.distance(d)).isEqualTo(expected);
+    }
 }
